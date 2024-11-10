@@ -496,6 +496,12 @@ function getIndicesOfOddNumbers(numbers) {
  */
 function getHexRGBValues(/* arr */) {
   throw new Error('Not implemented');
+  // const result = arr.map((el) => {
+  //   let num = el.toString(16);
+  //   num = num === 0 ? '0'.concat(num) : num;
+  //   return num;
+  // });
+  // return `#${result.join('')}`;
 }
 
 /**
@@ -528,8 +534,10 @@ function getMaxItems(/* arr, n */) {
  *    findCommonElements(['a', 'b', 'c'], ['b', 'c', 'd']) => [ 'b', 'c' ]
  *    findCommonElements([1, 2, 3], ['a', 'b', 'c']) => []
  */
-function findCommonElements(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function findCommonElements(arr1, arr2) {
+  const commonArr1 = arr1.filter((el) => arr2.includes(el));
+  const commonArr2 = arr2.filter((el) => arr1.includes(el));
+  return [...new Set([...commonArr1, ...commonArr2])];
 }
 
 /**
