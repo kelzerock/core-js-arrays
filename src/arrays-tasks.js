@@ -506,14 +506,10 @@ function getIndicesOfOddNumbers(numbers) {
  *    getHexRGBValues([ 0, 255, 16777215]) => [ '#000000', '#0000FF', '#FFFFFF' ]
  *    getHexRGBValues([]) => []
  */
-function getHexRGBValues(/* arr */) {
-  throw new Error('Not implemented');
-  // const result = arr.map((el) => {
-  //   let num = el.toString(16);
-  //   num = num === 0 ? '0'.concat(num) : num;
-  //   return num;
-  // });
-  // return `#${result.join('')}`;
+function getHexRGBValues(arr) {
+  return arr.map((el) =>
+    '#'.concat(el.toString(16).toUpperCase().padStart(6, '0'))
+  );
 }
 
 /**
